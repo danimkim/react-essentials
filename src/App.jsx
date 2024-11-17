@@ -1,13 +1,14 @@
 import Header from "@components/Header";
-import { CORE_CONCEPTS, TAB_MENUS } from "./constants";
+import { CORE_CONCEPTS, EXAMPLES, TAB_MENUS } from "./constants";
 import CoreConcept from "./components/CoreConcept";
 import TabButton from "./components/TabButton";
+import TabContent from "./components/TabContent";
+import { useState } from "react";
 
 function App() {
-  const handleSelect = (selectedMenu) => {
-    console.log(`Selected Menu: ${selectedMenu}`);
-  };
-
+  const [selectedTopic, setSelectedTopic] = useState("components");
+  const handleSelect = (selectedMenu) =>
+    setSelectedTopic(selectedMenu.toLowerCase());
   return (
     <div>
       <Header />
@@ -29,6 +30,9 @@ function App() {
               </TabButton>
             ))}
           </menu>
+          <div id="tab-content">
+            <TabContent {...EXAMPLES[selectedTopic]} />
+          </div>
         </section>
       </main>
     </div>
