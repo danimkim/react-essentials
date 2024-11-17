@@ -25,7 +25,11 @@ function App() {
           <h2>Examples</h2>
           <menu>
             {TAB_MENUS.map((menu) => (
-              <TabButton key={menu} onSelect={() => handleSelect(menu)}>
+              <TabButton
+                key={menu}
+                onSelect={() => handleSelect(menu)}
+                isSelected={selectedTopic === menu.toLowerCase()}
+              >
                 {menu}
               </TabButton>
             ))}
