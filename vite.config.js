@@ -11,5 +11,5 @@ export default defineConfig({
       "@utils": "/src/utils",
     },
   },
-  base: "/react-essentials",
+  base: "/react-essentials/",
 });
